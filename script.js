@@ -3,6 +3,7 @@
 const pokemonInput = document.querySelector("#pokemonInput");
 const searchButton = document.querySelector("#searchButton");
 const pokedexDisplay = document.querySelector("#pokedexDisplay");
+const carta_pokemon = document.querySelector("#carta_pokemon")
 
 // ---- 2. Añadimos el "Escuchador de Eventos" al botón ----
 // Esto le dice al botón: "Oye, cuando alguien te haga 'click',
@@ -51,6 +52,13 @@ async function buscarPokemon() {
             <p>Peso: ${data.weight / 10} kg</p>
             <p>Descripcion: ${data2.flavor_text_entries[0].flavor_text}</p>
         `;
+        const api = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonNameOrId}`)
+        const data3 = await api.json()
+        carta_pokemon.innerHTML = `
+        <img src = "${data3.data[0].images.small}" alt = "Carta de ${data3.data[0].name}">
+        
+        `;
+
 
     } catch (error) {
         // Si algo falló en el 'try' (o lanzamos el error nosotros),
