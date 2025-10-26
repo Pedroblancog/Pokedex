@@ -1,0 +1,53 @@
+/* ---- 1. Estilos Generales ---- */
+body {
+    font-family: Arial, sans-serif; /* Una tipografía más limpia */
+    background-color: #f4f4f4;    /* Un fondo gris muy claro */
+    color: #333;                 /* Un color de letra oscuro (no negro) */
+
+    /* ¡La magia de centrar! */
+    display: flex;              /* Usamos "Flexbox" */
+    flex-direction: column;   /* Ponemos las cosas en columna (una debajo de otra) */
+    align-items: center;      /* ¡Centramos todo horizontalmente! */
+    min-height: 100vh;        /* Hacemos que la página ocupe al menos toda la altura de la pantalla */
+}
+/* ---- 2. Estilos del Buscador ---- */
+
+/* Usamos el selector de CLASE para el contenedor */
+.buscar_pokemon {
+    margin-top: 20px; /* Un poco de espacio arriba, separándolo del título */
+}
+
+/* Usamos el selector de ID para el input */
+#pokemonInput {
+    padding: 10px;           /* Relleno interno para hacerlo más grande */
+    font-size: 16px;         /* Letra más grande */
+    border: 2px solid #ddd;  /* Un borde sutil */
+    border-radius: 5px;      /* Bordes redondeados */
+}
+
+/* Usamos el selector de ID para el botón */
+#searchButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #e63946; /* Un color rojo "Pokémon" */
+    color: white;
+    border: none;              /* Quitamos el borde feo del navegador */
+    border-radius: 5px;
+    cursor: pointer;           /* Hacemos que aparezca la "manito" al pasar el ratón */
+}
+
+/* Un pequeño extra: un efecto "hover" para el botón */
+#searchButton:hover {
+    background-color: #d62828; /* Un rojo un poco más oscuro al pasar el ratón */
+}
+/* ---- 3. Estilos de la "Tarjeta" de Resultado ---- */
+#pokedexDisplay {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra suave */
+    
+    /* Esto lo centrará todo dentro de la tarjeta (cuando haya algo) */
+    text-align: center;
+}
